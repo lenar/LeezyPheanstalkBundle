@@ -22,7 +22,7 @@ class ListTubeCommand extends AbstractPheanstalkCommand
     /**
      * @inheritdoc
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $name       = $input->getArgument('pheanstalk');
         $pheanstalk = $this->getPheanstalk($name);
