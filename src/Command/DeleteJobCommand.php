@@ -25,7 +25,7 @@ class DeleteJobCommand extends AbstractPheanstalkCommand
     /**
      * @inheritdoc
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $jobId      = new JobId($input->getArgument('job'));
         $name       = $input->getArgument('pheanstalk');
