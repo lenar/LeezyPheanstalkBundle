@@ -25,7 +25,7 @@ class KickJobCommand extends AbstractPheanstalkCommand
     /**
      * @inheritdoc
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $jobId      = $input->getArgument('job');
         $name       = $input->getArgument('pheanstalk');
