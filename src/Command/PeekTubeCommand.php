@@ -26,7 +26,7 @@ class PeekTubeCommand extends AbstractPheanstalkCommand
     /**
      * @inheritdoc
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $tube   = $input->getArgument('tube');
         $buried = $input->getOption('buried');
