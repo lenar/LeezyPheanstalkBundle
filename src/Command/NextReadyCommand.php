@@ -30,7 +30,7 @@ class NextReadyCommand extends AbstractPheanstalkCommand
     /**
      * @inheritdoc
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $name = $input->getArgument('pheanstalk');
         $tubeName = $input->getArgument('tube');
