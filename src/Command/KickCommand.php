@@ -25,7 +25,7 @@ class KickCommand extends AbstractPheanstalkCommand
     /**
      * @inheritdoc
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $tube       = $input->getArgument('tube');
         $max        = $input->getArgument('max');
