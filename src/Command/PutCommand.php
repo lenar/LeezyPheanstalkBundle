@@ -28,7 +28,7 @@ class PutCommand extends AbstractPheanstalkCommand
     /**
      * @inheritdoc
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $tube     = $input->getArgument('tube');
         $data     = $input->getArgument('data');
