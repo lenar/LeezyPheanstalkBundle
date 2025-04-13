@@ -91,7 +91,7 @@ class PheanstalkDataCollector extends DataCollector
         return 'pheanstalk';
     }
 
-    protected function doCollect(Request $request, Response $response, Throwable $exception = null)
+    protected function doCollect(Request $request, Response $response, ?Throwable $exception = null)
     {
         $defaultPheanstalk = $this->pheanstalkLocator->getDefaultPheanstalk();
 

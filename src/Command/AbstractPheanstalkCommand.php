@@ -18,7 +18,7 @@ abstract class AbstractPheanstalkCommand extends Command
         $this->locator = $locator;
     }
 
-    protected function getPheanstalk(string &$name = null): PheanstalkInterface
+    protected function getPheanstalk(?string &$name = null): PheanstalkInterface
     {
         $pheanstalk = $this->locator->getPheanstalk($name);
 

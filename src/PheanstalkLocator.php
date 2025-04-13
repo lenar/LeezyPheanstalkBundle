@@ -26,7 +26,7 @@ class PheanstalkLocator
         return $this->pheanstalks;
     }
 
-    public function getPheanstalk(string $name = null): ?PheanstalkInterface
+    public function getPheanstalk(?string $name = null): ?PheanstalkInterface
     {
         $name = $name ?? $this->default;
 
