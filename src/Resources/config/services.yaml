@@ -1,7 +1,7 @@
 services:
     leezy.pheanstalk.proxy.default:
         class: Leezy\PheanstalkBundle\Proxy\PheanstalkProxy
-        public: true
+        public: false
         calls:
             - [setDispatcher, ['@?event_dispatcher']]
             
