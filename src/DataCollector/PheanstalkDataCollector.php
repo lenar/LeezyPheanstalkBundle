@@ -41,7 +41,7 @@ class PheanstalkDataCollector extends DataCollector
         ];
     }
 
-    public function reset()
+    public function reset(): void
     {
         $this->data = [
             'pheanstalks' => [],
@@ -54,7 +54,7 @@ class PheanstalkDataCollector extends DataCollector
     /**
      * @return array
      */
-    public function getPheanstalks()
+    public function getPheanstalks(): array
     {
         return $this->data['pheanstalks'];
     }
@@ -62,7 +62,7 @@ class PheanstalkDataCollector extends DataCollector
     /**
      * @return array
      */
-    public function getTubes()
+    public function getTubes(): array
     {
         return $this->data['tubes'];
     }
@@ -70,7 +70,7 @@ class PheanstalkDataCollector extends DataCollector
     /**
      * @return int
      */
-    public function getJobCount()
+    public function getJobCount(): int
     {
         return $this->data['jobCount'];
     }
@@ -78,7 +78,7 @@ class PheanstalkDataCollector extends DataCollector
     /**
      * @return array
      */
-    public function getJobs()
+    public function getJobs(): array
     {
         return $this->data['jobs'];
     }
@@ -86,12 +86,12 @@ class PheanstalkDataCollector extends DataCollector
     /**
      * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return 'pheanstalk';
     }
 
-    protected function doCollect(Request $request, Response $response, ?Throwable $exception = null)
+    protected function doCollect(Request $request, Response $response, ?Throwable $exception = null): void
     {
         $defaultPheanstalk = $this->pheanstalkLocator->getDefaultPheanstalk();
 

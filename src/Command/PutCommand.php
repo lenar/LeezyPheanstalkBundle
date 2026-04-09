@@ -12,7 +12,7 @@ class PutCommand extends AbstractPheanstalkCommand
     /**
      * @inheritdoc
      */
-    protected function configure()
+    protected function configure(): void
     {
         $this
             ->setName('leezy:pheanstalk:put')

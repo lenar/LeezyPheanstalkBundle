@@ -20,7 +20,7 @@ use Symfony\Component\DependencyInjection\Definition;
  */
 class ProxyCompilerPass implements CompilerPassInterface
 {
-    protected function reservedName()
+    protected function reservedName(): array
     {
         return [
             'pheanstalks',
@@ -35,7 +35,7 @@ class ProxyCompilerPass implements CompilerPassInterface
     /**
      * @inheritdoc
      */
-    public function process(ContainerBuilder $container)
+    public function process(ContainerBuilder $container): void
     {
         if (!$container->hasParameter('leezy.pheanstalk.pheanstalks')) {
             return;

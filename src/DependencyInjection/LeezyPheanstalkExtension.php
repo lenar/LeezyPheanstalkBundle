@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Loader;
 use Symfony\Component\DependencyInjection\Reference;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\DependencyInjection\Extension\Extension;
 
 /**
  * This is the class that loads and manages your bundle configuration.
@@ -24,7 +24,7 @@ class LeezyPheanstalkExtension extends Extension
     /**
      * {@inheritDoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
+    public function load(array $configs, ContainerBuilder $container): void
     {
         $configuration = new Configuration();
         $config        = $this->processConfiguration($configuration, $configs);
@@ -97,5 +97,10 @@ class LeezyPheanstalkExtension extends Extension
 
         $container->setDefinition('leezy.pheanstalk.data_collector', $dataCollectorDef);
         $container->setAlias(PheanstalkDataCollector::class, 'leezy.pheanstalk.data_collector');
+    }
+
+    public function getAlias(): string
+    {
+        return 'leezy_pheanstalk';
     }
 }
